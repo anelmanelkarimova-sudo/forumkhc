@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>КЖК Форум | Glass Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">К</div>
+          <div>
+            <div class="brand-name">КЖК</div>
+            <div class="brand-sub">Forum</div>
+          </div>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang active">RU</button>
+          <button class="lang">EN</button>
+          <button class="lang">中文</button>
+        </div>
+      </header>
+
+      <main class="phone-screen">
+        <section class="screen active" data-screen="welcome">
+          <div class="hero-card">
+            <div class="hero-badge" data-i18n="heroBadge">3-day forum</div>
+            <h1 data-i18n="welcomeTitle">Добро пожаловать <br />на Форум КЖК</h1>
+            <p data-i18n="welcomeText">Регистрация, события, QR-проверка и ИИ-помощник в одном мобильном интерфейсе.</p>
+          </div>
+
+          <div class="quick-actions">
+            <button class="primary-btn" data-target="register" data-i18n="registerBtn">Регистрация</button>
+            <button class="secondary-btn" data-target="program" data-i18n="programBtn">Программа</button>
+            <button class="ghost-btn" data-target="assistant" data-i18n="helpBtn">Помощь</button>
+          </div>
+
+          <div class="info-strip">
+            <div>
+              <span data-i18n="participantsLabel">Участников</span>
+              <strong>70</strong>
+            </div>
+            <div>
+              <span data-i18n="speakersLabel">Спикеры</span>
+              <strong>12</strong>
+            </div>
+            <div>
+              <span data-i18n="todayLabel">Сегодня</span>
+              <strong>42</strong>
+            </div>
+          </div>
+
+          <div class="glass-panel quick-summary-panel">
+            <div class="panel-row panel-row-stack">
+              <div>
+                <span class="small-label" data-i18n="nextEventLabel">Следующее событие</span>
+                <h3 data-i18n="nextEventTitle">Открытие форума</h3>
+              </div>
+              <span class="time-pill" data-i18n="nextEventTime">08:30</span>
+            </div>
+            <div class="summary-metrics">
+              <div class="metric-tile">
+                <span data-i18n="welcomeTotalText">Всего</span>
+                <strong id="welcome-total">0</strong>
+              </div>
+              <div class="metric-tile success">
+                <span data-i18n="welcomeArrivedText">Пришли</span>
+                <strong id="welcome-arrived">0</strong>
+              </div>
+              <div class="metric-tile warning">
+                <span data-i18n="welcomeLateText">Опоздали</span>
+                <strong id="welcome-late">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel highlight-panel">
+            <div class="panel-row">
+              <div>
+                <span class="small-label" data-i18n="nextEventLabel">Следующее событие</span>
+                <h3 data-i18n="nextEventTitle">Открытие форума</h3>
+              </div>
+              <span class="time-pill" data-i18n="nextEventTime">08:30</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="register">
+          <div class="section-head">
+            <span class="label" data-i18n="registerLabel">Регистрация</span>
+            <h2 data-i18n="registerTitle">Новый участник</h2>
+          </div>
+
+          <div class="glass-panel form-panel">
+            <form class="form-grid">
+              <label>
+                <span data-i18n="formFullName">ФИО</span>
+                <input type="text" value="Анна Кузнецова" />
+              </label>
+              <label>
+                <span data-i18n="formCompany">Компания</span>
+                <input type="text" value="КЖК" />
+              </label>
+              <label>
+                <span data-i18n="formPosition">Должность</span>
+                <input type="text" value="Менеджер проекта" />
+              </label>
+              <label>
+                <span data-i18n="formCity">Город</span>
+                <input type="text" value="Астана" />
+              </label>
+              <label>
+                <span data-i18n="formPhone">Телефон</span>
+                <input type="tel" value="+7 (701) 555-10-11" />
+              </label>
+              <label>
+                <span data-i18n="formEmail">Email</span>
+                <input type="email" value="anna@kzk.kz" />
+              </label>
+              <label>
+                <span data-i18n="formWeChat">WeChat</span>
+                <input type="text" value="anna_kzk" />
+              </label>
+              <label>
+                <span data-i18n="formParticipantType">Тип участника</span>
+                <select>
+                  <option>Участник</option>
+                  <option>Спикер</option>
+                  <option>Партнер</option>
+                  <option>Организатор</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="formLanguage">Язык общения</span>
+                <select>
+                  <option>Русский</option>
+                  <option>English</option>
+                  <option>中文</option>
+                </select>
+              </label>
+            </form>
+          </div>
+
+          <div class="glass-panel highlight-panel">
+            <div class="panel-row">
+              <div>
+                <span class="small-label" data-i18n="formStatusLabel">Статус</span>
+                <h3 data-i18n="registrationSuccess">Участник успешно зарегистрирован</h3>
+              </div>
+              <span class="time-pill" id="desk-qr-status" data-i18n="qrReady">QR готов</span>
+            </div>
+          </div>
+
+          <div class="glass-panel qr-panel desk-qr-panel">
+            <div class="qr-box desk-qr-box">
+              <img id="desk-qr-image" class="qr-image" src="qr-code.png" alt="Единый QR стойки регистрации" />
+            </div>
+            <p data-i18n="deskQrDescription">Это QR стойки регистрации. Участник сканирует его, а организатор проверяет вход здесь.</p>
+          </div>
+
+          <button class="primary-btn full" data-target="attendance" data-i18n="goToCheckBtn">Перейти к проверке входа</button>
+        </section>
+
+        <section class="screen" data-screen="attendance">
+          <div class="section-head">
+            <span class="label" data-i18n="checkLabel">Проверка</span>
+            <h2 data-i18n="checkTitle">Вход участника</h2>
+          </div>
+
+          <div class="glass-panel qr-panel">
+            <div class="qr-box">
+              <div id="qr-reader" class="qr-reader"></div>
+            </div>
+            <div class="scan-toolbar">
+              <button id="start-scan-btn" class="ghost-btn full" data-i18n="startCameraBtn">Запустить камеру</button>
+            </div>
+            <div class="manual-scan">
+              <input id="manual-qr-input" type="text" placeholder="Вставьте QR-код или ID участника" data-i18n-placeholder="manualQrPlaceholder" />
+              <button id="manual-scan-btn" class="primary-btn full" data-i18n="confirmEntryBtn">Подтвердить вход</button>
+            </div>
+            <p data-i18n="scanHelpText">Камера нужна только чтобы проверить вход участника по QR-коду.</p>
+          </div>
+
+          <div class="glass-panel search-panel">
+            <input type="text" value="Анна Кузнецова" />
+          </div>
+
+          <div class="participant-card" id="scan-result-card" hidden>
+            <div class="participant-top">
+              <div>
+                <h3>Анна Кузнецова</h3>
+                <p>КЖК • Менеджер проекта</p>
+              </div>
+              <span class="chip green" data-i18n="statusCheckedIn">Пришёл</span>
+            </div>
+            <div class="meta-list">
+              <span>Астана</span>
+              <span>Русский</span>
+              <span>День 1</span>
+            </div>
+            <div class="status-actions">
+              <button class="mini-btn success" type="button" data-i18n="statusConfirmed">Подтвержден</button>
+              <button class="mini-btn" type="button" data-i18n="statusNotArrived">Не пришел</button>
+              <button class="mini-btn warn" type="button" data-i18n="statusLateShort">Опоздал</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="program">
+          <div class="section-head">
+            <span class="label" data-i18n="programLabel">Программа</span>
+            <h2 data-i18n="programTitle">Сегодня</h2>
+          </div>
+
+          <div class="event-list">
+            <article class="event-item">
+              <div class="event-time">08:30</div>
+              <div class="event-body">
+                <h3 data-i18n="eventOpeningTitle">Открытие форума</h3>
+                <p data-i18n="eventOpeningMeta">Главный зал • Русский</p>
+              </div>
+              <span class="chip green" data-i18n="eventLive">Live</span>
+            </article>
+
+            <article class="event-item">
+              <div class="event-time">11:00</div>
+              <div class="event-body">
+                <h3 data-i18n="eventPanelTitle">Панель: Жилищная политика</h3>
+                <p data-i18n="eventPanelMeta">Зал А • English</p>
+              </div>
+              <span class="chip gold" data-i18n="eventSpeaker">Спикер</span>
+            </article>
+
+            <article class="event-item">
+              <div class="event-time">14:30</div>
+              <div class="event-body">
+                <h3 data-i18n="eventNetworkTitle">Сетевой вечер</h3>
+                <p data-i18n="eventNetworkMeta">Лобби • Русский / 中文</p>
+              </div>
+              <span class="chip gray" data-i18n="eventNetworkLabel">Сеть</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="map">
+          <div class="section-head">
+            <span class="label" data-i18n="mapLabel">Карта</span>
+            <h2 data-i18n="mapTitle">План зала</h2>
+          </div>
+
+          <div class="glass-panel map-panel">
+            <div class="map-layout">
+              <div class="zone hall" data-i18n="mapHall">Главный зал</div>
+              <div class="zone lobby" data-i18n="mapLobby">Лобби</div>
+              <div class="zone room" data-i18n="mapRoomA">Зал A</div>
+              <div class="zone room small" data-i18n="mapRoomB">Зал B</div>
+              <div class="zone support" data-i18n="mapHelp">Помощь</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="assistant">
+          <div class="section-head">
+            <span class="label" data-i18n="assistantLabel">Помощь</span>
+            <h2 data-i18n="assistantTitle">ИИ-помощник</h2>
+          </div>
+
+          <div class="chat-box">
+            <div class="chat-msg bot" data-i18n="assistantGreeting">Здравствуйте! Чем могу помочь на форуме?</div>
+            <div class="chat-msg user" data-i18n="assistantQuestion">Где регистрация?</div>
+            <div class="chat-msg bot" data-i18n="assistantAnswer">Регистрация находится в главном лобби, рядом со входом.</div>
+          </div>
+
+          <div class="quick-questions">
+            <button data-target="program" data-i18n="assistantProgramBtn">Программа</button>
+            <button data-target="map" data-i18n="assistantMapBtn">Карта</button>
+            <button data-target="stats" data-i18n="assistantStatsBtn">Статистика</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="guests">
+          <div class="section-head">
+            <span class="label" data-i18n="guestsLabel">Гости</span>
+            <h2 data-i18n="guestsTitle">Список участников</h2>
+          </div>
+
+          <div class="glass-panel summary-panel">
+            <div class="summary-row">
+              <div>
+                <span class="small-label" data-i18n="guestsTotal">Всего</span>
+                <strong id="summary-total">0</strong>
+              </div>
+              <div>
+                <span class="small-label" data-i18n="guestsChecked">Пришли</span>
+                <strong id="summary-checked">0</strong>
+              </div>
+              <div>
+                <span class="small-label" data-i18n="guestsLate">Опоздали</span>
+                <strong id="summary-late">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel guest-search-panel">
+            <input id="guest-search" type="search" data-i18n-placeholder="guestSearchPlaceholder" placeholder="Поиск по имени или компании" />
+          </div>
+
+          <div class="glass-panel guest-table-panel">
+            <div class="table-header">
+              <span data-i18n="guestTableName">Участник</span>
+              <span data-i18n="guestTableStatus">Статус</span>
+            </div>
+            <div id="guest-list-body" class="guest-list-body"></div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="stats">
+          <div class="section-head">
+            <span class="label" data-i18n="statsLabel">Статистика</span>
+            <h2 data-i18n="statsTitle">Аналитика</h2>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span data-i18n="statsTotalText">Всего</span>
+              <strong id="stat-total">0</strong>
+            </div>
+            <div class="stat-card green">
+              <span data-i18n="statsCheckedText">Пришло</span>
+              <strong id="stat-checked">0</strong>
+            </div>
+            <div class="stat-card gold">
+              <span data-i18n="statsLateText">Опоздали</span>
+              <strong id="stat-late">0</strong>
+            </div>
+            <div class="stat-card gray">
+              <span data-i18n="statsPendingText">Не пришли</span>
+              <strong id="stat-pending">0</strong>
+            </div>
+          </div>
+
+          <div class="glass-panel chart-panel">
+            <div class="mini-chart">
+              <div class="bar bar-1"></div>
+              <div class="bar bar-2"></div>
+              <div class="bar bar-3"></div>
+              <div class="bar bar-4"></div>
+              <div class="bar bar-5"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" data-target="welcome" data-i18n="navHome">Главная</button>
+        <button class="nav-item" data-target="register" data-i18n="navRegister">Регистрация</button>
+        <button class="nav-item" data-target="attendance" data-i18n="navCheck">Проверка</button>
+        <button class="nav-item" data-target="guests" data-i18n="navGuests">Гости</button>
+        <button class="nav-item" data-target="assistant" data-i18n="navAssistant">ИИ</button>
+      </nav>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
